@@ -1,2 +1,2 @@
 # coding-solutions
-Coding solutions auto-synced by PushMyCode
+Coding solutions of DSA problems
