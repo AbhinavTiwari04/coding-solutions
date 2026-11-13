@@ -19,6 +19,9 @@ class Solution {
         }
     }
     public static void createGraph(ArrayList<Edge> graph[], int V, int [][]ref){
+        for(int i=0;i<V;i++)
+            graph[i]=new ArrayList<Edge>();
+
         for(int []edge: ref){
             int src=edge[0]-1, dest=edge[1]-1, wt=edge[2];
             graph[src].add(new Edge(src, dest, wt));
@@ -62,7 +65,6 @@ class Solution {
         // dijkstra algo 
         // sum of shortest time to reach all nodes + check if any index is -1 then return -1
         ArrayList<Edge>graph[]=  new ArrayList[n];
-        Arrays.fill(graph, new ArrayList<Edge>());
         createGraph(graph, n, times);
         return dijkstra(graph, n, k-1);
 
