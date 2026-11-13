@@ -51,9 +51,9 @@ Output: -1
 ## Solution
 
 **Language:** Java  
-**Runtime:** 35 ms (beats 5.26%)  
-**Memory:** 46.5 MB (beats 99.98%)  
-**Submitted:** 2026-11-13T13:59:26.851Z  
+**Runtime:** 14 ms (beats 37.67%)  
+**Memory:** 46.9 MB (beats 99.70%)  
+**Submitted:** 2026-11-13T14:09:23.314Z  
 
 ```java
 class Solution {
@@ -77,6 +77,9 @@ class Solution {
         }
     }
     public static void createGraph(ArrayList<Edge> graph[], int V, int [][]ref){
+        for(int i=0;i<V;i++)
+            graph[i]=new ArrayList<Edge>();
+
         for(int []edge: ref){
             int src=edge[0]-1, dest=edge[1]-1, wt=edge[2];
             graph[src].add(new Edge(src, dest, wt));
@@ -120,7 +123,6 @@ class Solution {
         // dijkstra algo 
         // sum of shortest time to reach all nodes + check if any index is -1 then return -1
         ArrayList<Edge>graph[]=  new ArrayList[n];
-        Arrays.fill(graph, new ArrayList<Edge>());
         createGraph(graph, n, times);
         return dijkstra(graph, n, k-1);
 
