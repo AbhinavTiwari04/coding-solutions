@@ -52,30 +52,20 @@ Output: 16
 ## Solution
 
 **Language:** Java  
-**Runtime:** 7 ms (beats 79.97%)  
+**Runtime:** 3 ms (beats 100.00%)  
 **Memory:** 81.3 MB (beats 87.03%)  
-**Submitted:** 2026-11-15T12:51:12.755Z  
+**Submitted:** 2026-11-15T12:53:20.774Z  
 
 ```java
 class Solution {
     public int numOfSubarrays(int[] arr) {
-        int even =1;
-        int odd =0;
-        int sum =0;
-        int ans =0;
-
-        for(int i=0;i<arr.length;i++) {
-            sum+=arr[i];
-            if(sum%2==0){
-                ans=(ans+odd)% 1000000007;
-                even++;
-            }
-            else{
-                ans=(ans+even)% 1000000007;
-                odd++;
-            }
+        long oddCount = 0, prefixSum = 0;
+        for(int a : arr){
+            prefixSum += a;
+            oddCount += prefixSum % 2;
         }
-        return ans;
+        oddCount += (arr.length - oddCount) * oddCount;
+        return (int)(oddCount % 1_000_000_007);
     }
 }
 ```
