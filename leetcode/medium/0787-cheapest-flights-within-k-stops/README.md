@@ -65,10 +65,11 @@ The optimal path with no stops from city 0 to 2 is marked in red and has cost 50
 **Language:** Java  
 **Runtime:** 6 ms (beats 85.26%)  
 **Memory:** 46 MB (beats 83.58%)  
-**Submitted:** 2026-11-21T13:51:07.639Z  
+**Submitted:** 2026-11-21T13:53:47.031Z  
 
 ```java
 class Solution {
+    // for building own adjacency arraylist
     public class Edge{
         int src, dest, wt;
         public Edge(int s, int d, int w){
@@ -77,6 +78,7 @@ class Solution {
             wt=w;
         }
     }
+    // for processing the BFS on each nodes and there unnderlying information
     public class Pair{
         int src, cost, stops;
         public Pair(int n,int c, int s){
