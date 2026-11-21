@@ -1,4 +1,5 @@
 class Solution {
+    // for building own adjacency arraylist
     public class Edge{
         int src, dest, wt;
         public Edge(int s, int d, int w){
@@ -7,6 +8,7 @@ class Solution {
             wt=w;
         }
     }
+    // for processing the BFS on each nodes and there unnderlying information
     public class Pair{
         int src, cost, stops;
         public Pair(int n,int c, int s){
