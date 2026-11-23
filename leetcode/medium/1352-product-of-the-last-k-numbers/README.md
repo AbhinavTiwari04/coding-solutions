@@ -58,8 +58,8 @@ productOfNumbers.getProduct(2); // return 32. The product of the last 2 numbers 
 
 **Language:** Java  
 **Runtime:** 18 ms (beats 70.76%)  
-**Memory:** 84.3 MB (beats 49.31%)  
-**Submitted:** 2026-11-23T12:45:25.469Z  
+**Memory:** 84.5 MB (beats 42.73%)  
+**Submitted:** 2026-11-23T12:45:55.530Z  
 
 ```java
 class ProductOfNumbers {
@@ -82,11 +82,13 @@ class ProductOfNumbers {
     
     public int getProduct(int k) {
         if(prefix.size()<k)return 0;
-        // System.out.println("working  "+prefix.size()+" size");
+        
         int last=prefix.get(prefix.size()-1);
         int relaxation=1;
+
         if(k!=prefix.size())
         relaxation=prefix.get(prefix.size()-k-1);
+
         return last/relaxation;
     }
 }
