@@ -53,13 +53,8 @@ class Solution {
                 }
             }
         }
-
         return dist;
     }
-
-
-
-
     public long[] earliestActivationTimes(int n, int[][] edges, int[] rs) {
       ArrayList<Edge> graph[]=new ArrayList[n];
       for(int i=0;i<n;i++)
