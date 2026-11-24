@@ -94,9 +94,9 @@ Java
 ## Solution
 
 **Language:** Java  
-**Runtime:** 133 ms (beats 74.77%)  
-**Memory:** 282.3 MB (beats 31.64%)  
-**Submitted:** 2026-11-24T19:51:48.992Z  
+**Runtime:** 142 ms (beats 51.74%)  
+**Memory:** 280.5 MB (beats 53.66%)  
+**Submitted:** 2026-11-24T19:52:07.035Z  
 
 ```java
 class Solution {
@@ -154,13 +154,8 @@ class Solution {
                 }
             }
         }
-
         return dist;
     }
-
-
-
-
     public long[] earliestActivationTimes(int n, int[][] edges, int[] rs) {
       ArrayList<Edge> graph[]=new ArrayList[n];
       for(int i=0;i<n;i++)
