@@ -47,9 +47,9 @@ Java
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 41.4 MB (beats 93.40%)  
-**Submitted:** 2026-11-26T12:16:05.084Z  
+**Runtime:** 0 ms  
+**Memory:** 41.1 MB  
+**Submitted:** 2026-11-26T12:16:20.229Z  
 
 ```java
 class Solution {
@@ -61,7 +61,7 @@ class Solution {
             n-=i;
             i--;
         }
-        return false;
+        return true;
     }
 }
 ```
