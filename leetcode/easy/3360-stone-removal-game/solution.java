@@ -7,6 +7,6 @@ class Solution {
             n-=i;
             i--;
         }
-        return false;
+        return true;
     }
 }
