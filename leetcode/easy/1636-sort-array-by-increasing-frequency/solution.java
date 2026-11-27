@@ -9,9 +9,11 @@ class Solution {
       for(int j=0;j<nums.length;j++)
         arr[j]=(Integer)nums[j];
       Arrays.sort(arr, (a,b)->{
-      if(mp.get(a)!=mp.get(b))
+        int getA=mp.get(a);
+        int getB=mp.get(b);
+      if(getA!=getB)
       return
-      mp.get(a)-mp.get(b);
+      getA-getB;
       else 
       return
       b-a;
