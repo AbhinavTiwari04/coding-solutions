@@ -47,9 +47,9 @@ Output: [5,-1,4,4,-6,-6,1,1,1]
 ## Solution
 
 **Language:** Java  
-**Runtime:** 9 ms (beats 47.01%)  
-**Memory:** 45 MB (beats 76.47%)  
-**Submitted:** 2026-11-27T12:22:43.561Z  
+**Runtime:** 8 ms (beats 64.08%)  
+**Memory:** 44.9 MB (beats 85.06%)  
+**Submitted:** 2026-11-27T12:25:07.187Z  
 
 ```java
 class Solution {
@@ -63,9 +63,11 @@ class Solution {
       for(int j=0;j<nums.length;j++)
         arr[j]=(Integer)nums[j];
       Arrays.sort(arr, (a,b)->{
-      if(mp.get(a)!=mp.get(b))
+        int getA=mp.get(a);
+        int getB=mp.get(b);
+      if(getA!=getB)
       return
-      mp.get(a)-mp.get(b);
+      getA-getB;
       else 
       return
       b-a;
