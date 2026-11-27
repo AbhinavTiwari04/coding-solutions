@@ -47,38 +47,58 @@ Output: [5,-1,4,4,-6,-6,1,1,1]
 ## Solution
 
 **Language:** Java  
-**Runtime:** 8 ms (beats 64.08%)  
-**Memory:** 45.2 MB (beats 65.38%)  
-**Submitted:** 2026-11-27T12:07:13.933Z  
+**Runtime:** 9 ms (beats 47.01%)  
+**Memory:** 45 MB (beats 76.47%)  
+**Submitted:** 2026-11-27T12:22:43.561Z  
 
 ```java
 class Solution {
     public int[] frequencySort(int[] nums) {
+        
       HashMap<Integer, Integer>mp=new HashMap<>();
-      PriorityQueue<Integer>pq=new PriorityQueue<>((a,b)->{
+      
+      for(int k:nums)
+        mp.put(k, mp.getOrDefault(k,0)+1);
+      Integer arr[]=new Integer[nums.length];
+      for(int j=0;j<nums.length;j++)
+        arr[j]=(Integer)nums[j];
+      Arrays.sort(arr, (a,b)->{
       if(mp.get(a)!=mp.get(b))
       return
       mp.get(a)-mp.get(b);
       else 
       return
       b-a;
+      });
 
+      for(int j=0;j<arr.length;j++){
+        nums[j]=(int)arr[j];
       }
-      );
+      return nums;
+    //   PriorityQueue<Integer>pq=new PriorityQueue<>((a,b)->{
+    //   if(mp.get(a)!=mp.get(b))
+    //   return
+    //   mp.get(a)-mp.get(b);
+    //   else 
+    //   return
+    //   b-a;
 
-      for(int k:nums)
-        mp.put(k, mp.getOrDefault(k,0)+1);
-      for(Integer k:mp.keySet()){
-        int t=mp.get(k);    
-        while(t-->0)
-            pq.offer(k);
-      }
-      int i=0;
-      int ans[]=new int[nums.length];
-      while(!pq.isEmpty())
-        ans[i++]=pq.poll();
+    //   }
+    //   );
+
+    //   for(int k:nums)
+    //     mp.put(k, mp.getOrDefault(k,0)+1);
+    //   for(Integer k:mp.keySet()){
+    //     int t=mp.get(k);    
+    //     while(t-->0)
+    //         pq.offer(k);
+    //   }
+    //   int i=0;
+    //   int ans[]=new int[nums.length];
+    //   while(!pq.isEmpty())
+    //     ans[i++]=pq.poll();
       
-      return ans;
+    //   return ans;
     }
 }
 ```
